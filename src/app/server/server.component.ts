@@ -5,5 +5,11 @@ import {Component} from '@angular/core'
     templateUrl: './server.component.html'
 })
 export class ServerComponent{
-
+    serverName:string='App';
+    serverId :number=10;
+    serverStatus:string='Offline';
+    getServerName()
+    {
+        this.serverName
+    }
 }
