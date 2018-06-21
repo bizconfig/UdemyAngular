@@ -1,4 +1,43 @@
-<button class="btn btn-primary">Add Server</button>
+<h3>Property binding</h3>
+<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+<p [innerText]="allowNewServer"></p>
+
+<h3>String interopolation</h3>
+<p>{{allowNewServer}}</p>
+
+<h3>Event Binding</h3>
+<button class="btn btn-primary" (click)="onCreateServer()">Add Server</button>
+<p>{{serverCreateStatus}}</p>
+
+
+
+<h3>Event Binding</h3>
+<input type="text" 
+class="form-control"
+(input)="onServerUpdate($event)">
+<p>{{ serverName }}</p>
+
+
+<h3>Tow way Binding</h3>
+<input type="text" 
+class="form-control"
+[(ngModel)]="serverNameTowWayBinding">
+<p>{{ serverNameTowWayBinding }}</p>
+
+
+
+<h3>Directive</h3>
+<h5>*ngIf</h5>
+<button class="btn btn-primary" (click)="onCreateServer()">Add Server</button>
+<p *ngIf="serverCreated">Server was Created , Server Name is {{serverName}}</p>
+
+<h5>*ngIf else</h5>
+<p *ngIf="serverCreated; else noServer">Server Created , Server Name is {{serverName}}</p>
+<ng-template #noServer>
+    <p>No server Created</p>
+</ng-template>
+
+
 
 <app-server></app-server>
 <app-server></app-server>
