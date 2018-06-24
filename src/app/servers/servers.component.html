@@ -41,3 +41,13 @@ class="form-control"
 
 <app-server></app-server>
 <app-server></app-server>
+
+
+<h5>*ngFor</h5>
+<input type="text" 
+class="form-control"
+[(ngModel)]="noteText">
+<button class="btn btn-primary" (click)="onAddNote()">Add Notes</button>
+
+
+<app-server *ngFor="let note of notes">{{note}}</app-server>

@@ -13,6 +13,8 @@ export class ServersComponent implements OnInit {
  serverName=''
  serverNameTowWayBinding='Test Server Two way data binding'
  serverCreated=false;
+ noteText='';
+ notes=['Note-1','Note2']
   constructor() { 
     setTimeout(()=>{
       this.allowNewServer=true;
@@ -30,6 +32,10 @@ export class ServersComponent implements OnInit {
   onServerUpdate(event:Event)
   {
     this.serverName=(<HTMLInputElement>event.target).value;
+  }
+  onAddNote(event:Event)
+  {
+    this.notes.push((<HTMLInputElement>event.target).value)
   }
 
 }
