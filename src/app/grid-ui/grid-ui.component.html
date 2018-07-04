@@ -1,0 +1,18 @@
+<div class="success">{{EntityName}}</div> 
+<div class="table-responsive">
+  <table class="table table-striped">
+    <tr>
+      <td *ngFor="let colName of gridColumns">
+        {{colName}}
+      </td>
+    </tr>
+    <tr *ngFor="let colObj of gridData">
+      <td *ngFor="let colName of gridColumns">
+        {{colObj[colName]}}
+      </td>
+      <td>
+        <a href="#" (click)="Select(colObj)"></a>
+      </td>
+    </tr>
+  </table>
+</div>

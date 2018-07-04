@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'Rakesh';
+  Customer : Array<Object> = new Array<Object>();
+  constructor(){
+    this.Customer.push({"Name":"Rakesh","Age":30})
+    this.Customer.push({"Name":"Lawrence","Age":31})
+  }
 }
